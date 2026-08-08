@@ -8,6 +8,7 @@ Modbus Manager adalah *wrapper library* untuk Arduino yang dibangun di atas [Mod
 * **Memori Aman:** Menggunakan `memcpy` untuk operasi data 32-bit untuk mencegah kerentanan *Strict Aliasing* di C++.
 * **Auto RS485 Pin Management:** Mendukung konfigurasi modul RS485 dengan DE/RE terpisah, DE/RE digabung, maupun *Auto-Direction* (tanpa pin kontrol).
 * **Clean Error Handling:** Fungsi mengembalikan `bool` (True jika sukses, False jika gagal). Kode error spesifik tetap dapat diakses via `get_code()`.
+* **Multi Stream Support:** Mendukung beberapa Serial Port dengan metode active instance yang otomatis mengatur proses TX dan RX.
 
 ## 📦 Instalasi
 

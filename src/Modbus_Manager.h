@@ -4,7 +4,6 @@
 #include <ModbusMaster.h>
 
 enum Modbus_Register_Type {HOLDING_REGISTER, INPUT_REG};
-enum Modbus_Pin_State {RX_MODE, TX_MODE, INIT};
 
 class Modbus_Manager
 {
@@ -12,7 +11,11 @@ class Modbus_Manager
     ModbusMaster node_;
     uint8_t code_ = 0;
 
-    static void manage_pins_(int8_t de_pin, int8_t re_pin, Modbus_Pin_State state);
+    int8_t de_pin_ = -1;
+    int8_t re_pin_ = -1;
+
+    static Modbus_Manager* active_instance_;
+
     static void pre_tx_();
     static void post_tx_();
 
@@ -48,7 +51,7 @@ class Modbus_Manager
     bool write(uint16_t address, float value, bool swap_words = false);
 
     // Get the code from the Modbus transaction
-    uint8_t get_code();
+    uint8_t get_code() const;
 
     // Get Modbus Master
     ModbusMaster &get_master();
