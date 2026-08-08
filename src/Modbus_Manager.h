@@ -9,16 +9,17 @@ enum Modbus_Pin_State {RX_MODE, TX_MODE, INIT};
 class Modbus_Manager
 {
   private:
-    ModbusMaster _node;
-    uint8_t _code = 0;
+    ModbusMaster node_;
+    uint8_t code_ = 0;
 
-    static void _manage_pins(int8_t de_pin, int8_t re_pin, Modbus_Pin_State state);
-    static void _pre_tx();
-    static void _post_tx();
+    static void manage_pins_(int8_t de_pin, int8_t re_pin, Modbus_Pin_State state);
+    static void pre_tx_();
+    static void post_tx_();
 
-    uint8_t _core_read(uint16_t address, uint8_t num_words, Modbus_Register_Type register_type);
+    uint8_t core_read_(uint16_t address, uint8_t num_words, Modbus_Register_Type register_type);
 
   public:
+    // Constructor
     Modbus_Manager();
 
     // Initialize the Modbus Manager
