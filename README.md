@@ -1,4 +1,4 @@
-# Modbus_Manager Library
+# Modbus_Manager
 
 Modbus Manager adalah *wrapper library* untuk Arduino yang dibangun di atas [ModbusMaster](https://github.com/4-20ma/ModbusMaster). Library ini dirancang untuk menyelesaikan masalah umum pada Modbus RTU, seperti manipulasi memori (*bit-shifting*) pada data 32-bit (Float/Integer) dan manajemen pin Transceiver RS485 (DE/RE).
 

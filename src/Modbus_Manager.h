@@ -8,6 +8,20 @@
  */
 enum Modbus_Register_Type {HOLDING_REGISTER, INPUT_REGISTER};
 
+/**
+ * @brief Manajer komunikasi Modbus RTU berbasis library ModbusMaster.
+ * 
+ * Kelas ini menyediakan lapisan abstraksi untuk menyederhanakan interaksi dengan 
+ * perangkat slave Modbus melalui antarmuka RS-485. Fitur utama yang disediakan meliputi:
+ * 
+ * - Manajemen otomatis untuk pin kontrol Driver Enable (DE) dan Receiver Enable (RE).
+ * 
+ * - Fungsi baca/tulis yang di-overload untuk menangani berbagai tipe data secara langsung 
+ *   (uint16_t, int16_t, uint32_t, int32_t, dan float).
+ * 
+ * - Penanganan endianness yang fleksibel melalui parameter penukaran word (swap_words) 
+ *   untuk kompatibilitas dengan berbagai jenis alamat.
+ */
 class Modbus_Manager
 {
   private:
